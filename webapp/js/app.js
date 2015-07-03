@@ -1,6 +1,6 @@
 var debugProject = angular.module('debugProject', ['ui.router']);
 
-debugProject.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 
+debugProject.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
 	function($stateProvider, $urlRouterProvider, $locationProvider) {
 
 
@@ -19,9 +19,11 @@ debugProject.config(['$stateProvider', '$urlRouterProvider', '$locationProvider'
 	}
 ]);
 
-debugProject.controller('mainController', function($scope, UserServic) {
+debugProject.controller('mainController', function($scope, UserService) {
 
   var self = this;
+
+  self.greeting = 'tence';
 
   UserService.getUser()
     .then(function(data){
@@ -36,8 +38,6 @@ debugProject.controller('mainController', function($scope, UserServic) {
 debugProject.controller('todoController', function($scope, DataService) {
 
   var self = this;
-
-  self.greeting = 'tence';
 
   self.newItem = {};
 
