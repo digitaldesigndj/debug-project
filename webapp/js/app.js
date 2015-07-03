@@ -67,7 +67,7 @@ debugProject.factory('DataService', function($http, $rootScope, $q){
     var d = $q.defer();
     $http.get('/api/v1/todos')
       .success(function(data){
-        return d.resolve();
+        return d.resolve(data);
       })
       .error(function(error){
         return d.reject(error);
