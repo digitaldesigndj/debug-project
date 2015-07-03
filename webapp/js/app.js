@@ -53,7 +53,7 @@ debugProject.controller('todoController', function($scope, DataService) {
 
   self.createItem = function(newItem){
     var tempObj = {
-      "title" : newItem.titles,
+      "title" : newItem.title,
       "description" : newItem.desc
     };
     self.todos.push(tempObj);
